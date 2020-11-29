@@ -1,0 +1,60 @@
+  
+{
+  "Studentai": [
+    {
+      "Vardas": "Jonas",
+      "Pavarde": "Petraitis",
+      "Mokosi": "KTU Informatikos fakultete III kurse",
+      "Islaikes": [
+        {
+          "Modulis": "Informatika",
+          "Balas": "9"
+        },
+        {
+          "Modulis": "Filosofija"
+        },
+        {
+          "Modulis": "Imitacinis modeliavimas",
+          "Balas": "8"
+        }
+      ]
+    },
+    {
+      "Vardas": "Pranas",
+      "Pavarde": "Petraitis",
+      "Mokosi": "VDU Gamtos mokslų fakulteto II kurse",
+      "Islaikes": [
+        {
+          "Modulis": "Informatika",
+          "Balas": "5"
+        },
+        {
+          "Modulis": "Filosofija",
+          "Balas": "9"
+        },
+        {
+          "Modulis": "Lotynų kalba",
+          "Balas": "5"
+        }
+      ]
+    },
+{
+      "Vardas": "Petras",
+      "Pavarde": "Petraitis",
+      "Mokosi": "KTU Statybos ir architektūros fakultete IV kurse",
+      "Islaikes": [
+        {
+          "Modulis": "Informatika",
+          "Balas": "7"
+        },
+        {
+          "Modulis": "Filosofija"
+        },
+        {
+          "Modulis": "Braižyba",
+          "Balas": "8"
+        }
+      ]
+    }
+  ]
+}

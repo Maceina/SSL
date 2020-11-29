@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Justas",
+    "email": "justas@gmail.com",
+    "message": "Mano žinutė",
+    "receiver-email": "kitas@gmail.com",
+    "ip": "127.0.0.1",
+    "date": "2019-11-22"
+  },
+  {
+    "name": "Justas2",
+    "email": "justas2@gmail.com",
+    "message": "Mano žinutė 2",
+    "receiver-email": "kitas2@gmail.com",
+    "ip": "127.0.0.2",
+    "date": "2019-11-23"
+  },
+  {
+    "name": "Justas3",
+    "email": "justas3@gmail.com",
+    "message": "Mano žinutė 3",
+    "receiver-email": "kitas3@gmail.com",
+    "ip": "127.0.0.3",
+    "date": "2019-11-24"
+  }
+]

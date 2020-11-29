@@ -1,0 +1,12 @@
+{"Personalas":
+ [{"Pavardė":"Katinas",
+  "Vardas":"Jonas",
+  "Adresas":{"adr1":"Gedimino 5-10","adr2":"Kaunas"},
+  "Telefonas":["86655777","86999888"],
+  "Amžius":25},
+ {"Pavardė":"Lapinas",
+  "Vardas":"Juozas",
+  "Adresas":{"adr1":"Vytauto 5-10","adr2":"Vilnius"},
+  "Telefonas":"86333444",
+  "Amžius":23}]
+}

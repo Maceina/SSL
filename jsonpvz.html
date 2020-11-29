@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+	</head>
+<body>
+	<b>Pavyzdys laboratoriniam darbui</b><br>
+	Per serveryje veikiančią programą <b>apipvz.php</b> paimam paskutinius įrašus iš lentelės "keliones2"<br><br>
+<div class="form">
+      <label for="kur">Įvesk miestą: </label><input type="text" id="kur" class="kur">
+	  <label for="kiek">Kiek paskutinių įrašų: </label><input type="number" id="kiek" class="kiek">
+      <input type="submit" value="Vykdyti" class="spausk">
+</div>
+	<br><b>Siunčiama užklausa į http://localhost/json/apipvz.php:</b><br><p id="uzklausa"></p>
+	<b>Atsakymas JSON formate:</b><br><p id="jsonats"></p>
+	<b>Rasti tokie pasiūlymai:</b><br><p id="lentele"></p>
+
+<script>
+const lspausk = document.querySelector('.spausk');    //mygtukas Vykdyti
+const lkur = document.querySelector('.kur');          // formos laukai
+const lkiek = document.querySelector('.kiek');
+lkur.value=''; lkiek.value='';						  // kas juose įrašyta
+lkur.focus();
+lspausk.addEventListener('click', ieskok);            //paspaude Vykdyti
+function ieskok() {
+	let kur = lkur.value;
+	let kiek = lkiek.value;
+	let url = "http://localhost/json/apipvz.php";
+	let http_response=0;
+	let ats,string_ats,x,txt;
+	url+="/?kur="+kur+"&kiek="+kiek;                      			// prijungiam GET užklausai parametrus ?kur=abc&kiek=123
+	document.getElementById("uzklausa").innerHTML=url+"<br>";		// parodom kokia užklausa siunčiama
+
+  fetch(url)
+	.then(response => {
+     		http_response=response.status;
+            return response.json()
+  	})
+  	.then(data => {
+    	string_ats=JSON.stringify(data);							// objektą data paverciam JSON tekstu
+		string_ats +="<br>HTTP kodas: "+http_response;
+	  	document.getElementById("jsonats").innerHTML=string_ats;    // parodom gautą atsakymą JSON formatu
+   		// console.log(data);										 //derinimui
+	    if (http_response == 200) {  
+			// formuojam rezultatą html lentele kintamajame txt
+			txt=	'<table border="1" width="50%" class="table table-striped" id="lentele">'+
+				'<tr><th> Kur</th><th>Kada</th><th>Dienų sk.</th><th>Kaina</th></tr>';
+    		for (x in data) {
+				txt += "<tr><td>" + data[x].kur + "</td><td>" + data[x].kada + 
+					"</td><td>" + data[x].kiekdienu +"</td><td>" + data[x].kaina +"</td></tr>";
+    		}
+   			 txt += "</table>" 
+		}else txt= string_ats;  // klaidos tekstas vietoj lentelės
+			
+    	document.getElementById("lentele").innerHTML=txt;          // parodom lentelę ar klaidą
+
+  	})
+  	.catch(err => {
+  	 document.getElementById("lentele").innerHTML+="Klaida:"+err;
+   	console.log(err);
+  })
+}
+</script>
+
+</body>
+</html>
