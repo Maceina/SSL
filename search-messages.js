@@ -3,7 +3,7 @@ const name = document.querySelector('#name');
 const count = document.querySelector('#count');
 
 submit.addEventListener('click', search);
-// Retrieves all messagesss
+// Retrieves all messagessss
 function search() {
     let api_url = "http://tinklai.files/LD-3/1-dalis/zinutes-api.php" + "?name=" + name.value + "&count=" + count.value;
     fetch(api_url).then(response => {
